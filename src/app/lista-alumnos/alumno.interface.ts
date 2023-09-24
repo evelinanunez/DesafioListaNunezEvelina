@@ -5,4 +5,5 @@ export interface Alumno{
   fechaIngreso: Date;
   calificacion: boolean;
   dni: number;
+  sexo: string;
 }

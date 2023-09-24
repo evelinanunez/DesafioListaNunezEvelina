@@ -6,6 +6,7 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { PageWrapperComponent } from './page-wrapper/page-wrapper.component';
 import { ListaAlumnosComponent } from './lista-alumnos/lista-alumnos.component';
+import { CalificacionPipe } from './directives/calificacion.directive';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { ListaAlumnosComponent } from './lista-alumnos/lista-alumnos.component';
     HeaderComponent,
     FooterComponent,
     PageWrapperComponent,
-    ListaAlumnosComponent
+    ListaAlumnosComponent,
+    CalificacionPipe,
   ],
   imports: [
     BrowserModule
