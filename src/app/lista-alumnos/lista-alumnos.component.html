@@ -21,17 +21,21 @@
 <!--         <td [ngStyle]= "{backgroundColor : alumno.calificacion === true ? 'green' : 'red' }">
           {{alumno.calificacion}}
         </td> -->
-        <td [ngClass]="alumno.calificacion ? 'aprobado' :'desaprobado'" calificacionPipe>
-          <p *ngIf="aprobado;else noEstaAprobado">
-            Aprobado
-          </p>
-          <ng-template #noEstaAprobado>
-          <p>Desaprobado</p>
-          </ng-template>
-
-        </td>
+        <td  [ngClass]="alumno.calificacion ? 'aprobado' :'desaprobado'" calificacionPipe>
+          {{alumno.calificacion}}
       </tr>
     </tbody>
   </table>
+  <div *ngIf="mostrarMensaje">
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Excepturi vero, soluta earum ad aperiam quam provident nisi unde aspernatur odit perspiciatis voluptas deleniti repudiandae! Adipisci pariatur ex tempore alias veniam.</p>
+  </div>
 
 
+<!--   COnsulta: Esto no funciona, como podría hacer un ngIf con datos dinamicos del ngFor? ME gustaría
+                  Hacer lo mismo pero con el ngSwitch
+  <div >
+    <p *ngIf="{{alumno.calificacion}}, else noEstaAprobado">Estas aprobado!!.</p>
+    <ng-template #noEstaAprobado>
+      <p >Será la Proxima</p>
+    </ng-template>
+  </div> -->

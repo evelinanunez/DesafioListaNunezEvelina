@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Alumno } from './alumno.interface';
 
 @Component({
@@ -8,7 +8,8 @@ import { Alumno } from './alumno.interface';
 })
 export class ListaAlumnosComponent {
 
-  aprobado: boolean= true;
+  mostrarMensaje: boolean = false;
+
   alumnos : Alumno[] = [
        {
           nombre: 'Evelina',
@@ -57,12 +58,8 @@ export class ListaAlumnosComponent {
               },
   ]
 
-  // Genere ese metodo para poder cargar la variable aprobado con su calificación
-  // transformar el true/false por aprobado/desaprobado, pero no funciona.
-  getAprobado(){
-    for(let alumno of this.alumnos){
-      this.aprobado = alumno.calificacion;
-    }
-  }
+
+
+
   }
 
