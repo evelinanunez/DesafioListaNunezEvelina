@@ -9,6 +9,7 @@
         <th scope="col">Edad</th>
         <th scope="col">Fecha Ingreso</th>
         <th scope="col">Calificación</th>
+        <th scope="col">Sexo</th>
       </tr>
     </thead>
     <tbody class="table-group-divider">
@@ -16,13 +17,25 @@
         <td >{{alumno.nombre | uppercase}}</td>
         <td>{{alumno.apellido | uppercase}}</td>
         <td>{{alumno.dni}}</td>
-        <td>{{alumno.edad}}</td>
+        <td ResaltarPipe>{{alumno.edad}} Años</td>
         <td>{{alumno.fechaIngreso | date }}</td>
 <!--         <td [ngStyle]= "{backgroundColor : alumno.calificacion === true ? 'green' : 'red' }">
           {{alumno.calificacion}}
         </td> -->
-        <td  [ngClass]="alumno.calificacion ? 'aprobado' :'desaprobado'" calificacionPipe>
-          {{alumno.calificacion}}
+        <td  [ngClass]="alumno.calificacion ? 'aprobado' :'desaprobado'"
+        >
+        <p *ngIf="alumno.calificacion; else noEstaAprobado">Aprobado</p>
+        <ng-template #noEstaAprobado >
+        <p>Desaprobado</p>
+        </ng-template>
+        </td>
+        <td [ngSwitch]="alumno.sexo"
+        >
+        <p *ngSwitchCase="'F'">Femenino</p>
+        <p *ngSwitchCase="'M'">Masculino</p>
+        <p *ngSwitchCase="'O'">No binario</p>
+        <p *ngSwitchCase="'S'">Sin Genero informado</p>
+      </td>
       </tr>
     </tbody>
   </table>

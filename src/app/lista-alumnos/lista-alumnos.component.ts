@@ -36,7 +36,7 @@ export class ListaAlumnosComponent {
           fechaIngreso: new Date(),
           calificacion: true,
           dni: 1233666,
-          sexo: 'F',
+          sexo: 'O',
           },
           {
             nombre: 'Cleopatra',
@@ -54,8 +54,10 @@ export class ListaAlumnosComponent {
               fechaIngreso: new Date(),
               calificacion: false,
               dni: 3456,
-              sexo: 'M',
+              sexo: 'S',
               },
+
+
   ]
 
 
